@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 
 // Make a component
-const Header = (props) => {
+export const Header = (props) => {
 
     Header.propTypes = {
         headerText: PropTypes.string.isRequired,
@@ -38,4 +38,4 @@ const styles = {
 };
 
 // Make the component available to other part of the app 
-export default Header;
+//export default Header;

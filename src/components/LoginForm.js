@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import Button from './commons/Button';
-import Card from './commons/Card';
-import CardSection from './commons/CardSection';
-import Input from './commons/Input';
+import { Button, Card, CardSection, Input, Spinner } from './commons';
 import { Text, View } from 'react-native';
-import Spinner from './commons/Spinner';
 import {
     emailChanged,
     passwordChanged,

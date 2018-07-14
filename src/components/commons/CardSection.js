@@ -2,8 +2,8 @@ import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 
-const CardSection = (props) => {
-    
+export const CardSection = (props) => {
+
     CardSection.propTypes = {
         children: PropTypes.object.isRequired,
     };
@@ -27,4 +27,4 @@ const styles = {
     }
 };
 
-export default CardSection;
+// export default CardSection;

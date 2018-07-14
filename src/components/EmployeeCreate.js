@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import Card from './commons/Card';
-import CardSection from './commons/CardSection';
-import Input from './commons/Input';
-import Button from './commons/Button';
+import { Card, CardSection, Input, Button } from './commons';
 
 class EmployeeCreate extends Component {
     render() {

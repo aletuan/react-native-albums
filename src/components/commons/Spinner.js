@@ -2,7 +2,7 @@ import React from 'react';
 import { View, ActivityIndicator } from 'react-native';
 import PropTypes from 'prop-types';
 
-const Spinner = ({ size }) => {
+export const Spinner = ({ size }) => {
 
     Spinner.propTypes = {
         size: PropTypes.string,
@@ -23,4 +23,4 @@ const styles = {
     }
 };
 
-export default Spinner;
+// export default Spinner;
