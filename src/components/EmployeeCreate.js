@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Card, CardSection, Input, Button } from './commons';
+import { connect } from 'react-redux';
+import { employeeUpdate } from '../actions';
+import PropTypes from 'prop-types';
+
 
 class EmployeeCreate extends Component {
     render() {
@@ -9,6 +13,8 @@ class EmployeeCreate extends Component {
                     <Input 
                         label="Name"
                         placeholder="Jane"
+                        value={this.props.name}
+                        onChangeText={text => this.props.employeeUpdate({ prop: 'name', value: text})}
                     />
                 </CardSection>
 
@@ -16,6 +22,8 @@ class EmployeeCreate extends Component {
                     <Input
                         label="Phone"
                         placeholder="555-555-555"
+                        value={this.props.phone}
+                        onChangeText={text => this.props.employeeUpdate({ prop: 'phone', value: text})}
                     />
                 </CardSection>
 
@@ -32,4 +40,16 @@ class EmployeeCreate extends Component {
     }
 }
 
-export default EmployeeCreate;
+EmployeeCreate.propTypes = {
+    name: PropTypes.string,
+    phone: PropTypes.string,
+    employeeUpdate: PropTypes.func,
+};
+
+const mapStateToProps = (state) => {
+    const { name, phone, shift } = state.employeeForm;
+
+    return { name, phone, shift };
+};
+
+export default connect(mapStateToProps, { employeeUpdate })(EmployeeCreate);
