@@ -1,8 +1,19 @@
 import React from 'react';
 import { TextInput, Text, View } from 'react-native';
+import PropTypes from 'prop-types';
 
 const Input = ({label, value, onChangeText, placeholder, secureTextEntry }) => {
+
+    Input.propTypes = {
+        label: PropTypes.string.isRequired,
+        value: PropTypes.string,
+        placeholder: PropTypes.string,
+        secureTextEntry: PropTypes.bool,
+        onChangeText: PropTypes.func,
+    };
+
     const { inputStyle, labelStyle, containerStyle } = styles;
+
     return (
         <View style={containerStyle}>
             <Text style={labelStyle}>

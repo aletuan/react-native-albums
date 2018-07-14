@@ -1,9 +1,14 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
+import PropTypes from 'prop-types';
 
 const Button = ( {onPress, children}) => {
     // TODO: Decorate button
     // FIXME: If there is any error
+    Button.propTypes = {
+        children: PropTypes.string,
+        onPress: PropTypes.func
+    };
 
     const { buttonStyle, textStyle } = styles;
 

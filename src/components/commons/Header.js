@@ -1,9 +1,15 @@
 // Import libraries for making a component
 import React from 'react';
 import { Text, View } from 'react-native';
+import PropTypes from 'prop-types';
 
 // Make a component
 const Header = (props) => {
+
+    Header.propTypes = {
+        headerText: PropTypes.string.isRequired,
+    };
+
     const { textStyle, viewStyle } = styles;
 
     return (

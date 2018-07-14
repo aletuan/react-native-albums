@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import * as actions from 'actions';
 
 class ListItem extends Component {
-    componentWillUpdate() {
+    UNSAFE_componentWillUpdate() {
         LayoutAnimation.spring();
     }
 
