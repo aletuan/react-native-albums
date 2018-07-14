@@ -8,8 +8,10 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from 'actions';
+import PropTypes from 'prop-types';
 
 class ListItem extends Component {
+
     UNSAFE_componentWillUpdate() {
         LayoutAnimation.spring();
     }
@@ -42,6 +44,13 @@ class ListItem extends Component {
     }
 }
 
+ListItem.propTypes = {
+    id: PropTypes.number,
+    title: PropTypes.string,
+    library: PropTypes.object,
+    expanded: PropTypes.bool,
+    selectLibrary: PropTypes.func,
+};
 
 const styles = {
     titleStyle: {
