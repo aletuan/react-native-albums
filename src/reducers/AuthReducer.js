@@ -35,5 +35,5 @@ export default (state = INITIAL_STATE, action) => {
         return { ...state, loading: true, error: ''};
     default: 
         return state;
-    };
-}
+    }
+};
