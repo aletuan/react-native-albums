@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 class EmployeeCreate extends Component {
     onButtonPress() {
         const { name, phone, shift } = this.props;
-        this.props.employeeCreate({ name, phone, shift });
+        this.props.employeeCreate({ name, phone, shift: shift || 'Friday' });
     }
 
     render() {
@@ -29,15 +29,16 @@ class EmployeeCreate extends Component {
                         label="Phone"
                         placeholder="555-555-555"
                         value={this.props.phone}
-                        onChangeText={text => this.props.employeeUpdate({ prop: 'phone', value: text})}
+                        onChangeText={text => this.props.employeeUpdate({ prop: 'phone', value: text })}
                     />
                 </CardSection>
 
-                <CardSection
-                    selectedValue={this.props.shift}
-                    onValueChange={day => this.props.employeeUpdate( { prop: 'shift', value: day})}
-                >
-                    <Picker style={{ flex: 1 }}>
+                <CardSection>
+                    <Picker 
+                        style={{ flex: 1 }}
+                        selectedValue={this.props.shift}
+                        onValueChange={day => this.props.employeeUpdate( { prop: 'shift', value: day })}                    
+                    >
                         <Picker.Item label="Monday" value="Monday" />
                         <Picker.Item label="Tuesday" value="Tuesday" />
                         <Picker.Item label="Wednesday" value="Wednesday" />

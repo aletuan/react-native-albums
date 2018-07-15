@@ -1,3 +1,5 @@
+import firebase from 'firebase';
+
 import {
     EMPLOYEE_UPDATE,
     EMPLOYEE_CREATE,
@@ -10,8 +12,15 @@ export const employeeUpdate = ({ prop, value }) => {
     };
 };
 
-export const employeeCreate = ( {name, phone, shift }) => {
-    console.log(name, phone, shift);
+export const employeeCreate = ({ name, phone, shift }) => {
+    // get current user
+    const { currentUser } = firebase.auth();
+    
+    // get ref to location in data store
+    firebase.database().ref(`/users/${currentUser.uid}/employees`)
+        .push({
+            name, phone, shift
+        });
     return {
         type: EMPLOYEE_CREATE,
         payload: { name, phone, shift },
