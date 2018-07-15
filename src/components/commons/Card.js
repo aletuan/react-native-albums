@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export const Card = (props) => {
     Card.propTypes = {
-        children: PropTypes.object.isRequired,
+        children: PropTypes.array.isRequired,
     };
 
     return (
