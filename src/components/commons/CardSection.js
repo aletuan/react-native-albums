@@ -6,10 +6,11 @@ export const CardSection = (props) => {
 
     CardSection.propTypes = {
         children: PropTypes.object.isRequired,
+        style: PropTypes.object,
     };
 
     return (
-        <View style={styles.containerStyle}>
+        <View style={[styles.containerStyle, props.style]}>
             {props.children}
         </View>
     );
