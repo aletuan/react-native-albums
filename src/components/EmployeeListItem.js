@@ -8,7 +8,7 @@ class EmployeeListItem extends Component {
 
     onRowPress() {
         // action navigation
-        Actions.employeeCreate({ employee: this.props.employee });
+        Actions.employeeEdit({ employee: this.props.employee });
     }
 
     render() {
