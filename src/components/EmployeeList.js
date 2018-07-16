@@ -8,7 +8,12 @@ import EmployeeListItem from './EmployeeListItem';
 
 class EmployeeList extends Component {
 
-    UNSAFE_componentWillMount() {
+    // UNSAFE_componentWillMount() {
+    //     this.props.employeeFetch();
+    //     this.createDataSource(this.props);
+    // }
+    constructor(props) {
+        super(props);
         this.props.employeeFetch();
         this.createDataSource(this.props);
     }

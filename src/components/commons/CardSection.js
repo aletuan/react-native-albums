@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export const CardSection = (props) => {
 
     CardSection.propTypes = {
-        children: PropTypes.object.isRequired,
+        children: PropTypes.array.isRequired,
         style: PropTypes.object,
     };
 
